@@ -1,6 +1,6 @@
 package edu.du.sbtest0313.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity

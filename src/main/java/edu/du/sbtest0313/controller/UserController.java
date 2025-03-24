@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSession; // javax → jakarta 변경
 import java.util.List;
 
 @Controller
@@ -40,13 +40,12 @@ public class UserController {
             return "login/signup";
         }
 
-        // 유저 이름 중복 확인
+        // 사용자 이름 중복 확인
         if (userRepository.findByUsername(user.getUsername()).isPresent()) {
             model.addAttribute("error", "이미 사용 중인 사용자 이름입니다.");
             return "login/signup";
         }
 
-        // 저장
         userRepository.save(user);
         return "redirect:/user/login";
     }
@@ -82,10 +81,4 @@ public class UserController {
         session.invalidate();
         return "redirect:/";
     }
-
-
-
-
-
-
 }

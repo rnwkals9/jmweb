@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import edu.du.sbtest0313.entity.User;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class HomeController {
